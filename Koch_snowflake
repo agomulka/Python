@@ -1,0 +1,31 @@
+import turtle
+wn = turtle.Screen()
+turtle = turtle.Turtle()
+turtle.speed(15)
+
+#recursion
+
+def koch_snowflake(n,lenght):
+    if n == 0:
+        turtle.forward(lenght)
+    else:
+        koch_snowflake(n-1,lenght/3)
+        turtle.right(60)
+        koch_snowflake(n-1,lenght/3)
+        turtle.left(120)
+        koch_snowflake(n-1,lenght/3)
+        turtle.right(60)
+        koch_snowflake(n-1,lenght/3)
+
+
+
+n=5
+lenght=300
+koch_snowflake(n,lenght)
+turtle.left(120)
+koch_snowflake(n,lenght)
+turtle.left(120)
+koch_snowflake(n,lenght)
+turtle.left(120)
+
+wn.exitonclick()
