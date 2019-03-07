@@ -1,0 +1,15 @@
+import math
+def eratosthenes (n):
+    a = int(math.sqrt(n))
+    zb = set(list(range(2 , (n + 1))))
+    for i in range(2 , (n+1)) :
+        if i in zb :
+            j = i*i
+            while j < n+1:
+                zb.discard(j)
+                j += i
+    return zb
+
+
+# find all prime numbers < n n = 51
+print(eratostenes(n))
