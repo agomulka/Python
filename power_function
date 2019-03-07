@@ -1,0 +1,15 @@
+def power(base, exponent):
+    if exponent == 0:
+        return 1
+    elif exponent == 1:
+        return base
+    else:
+        half = power(base, exponent // 2)
+        if exponent % 2 == 0:
+            return half * half
+        else:
+            return half * half * base
+
+x = 2
+y = 5
+print(power(x, y))
