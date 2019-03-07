@@ -1,0 +1,28 @@
+import turtle, random
+
+def tree(x, turtle, pen_size):
+    if x > 5 :
+        turtle.pensize(pen_size)
+        pen_size *= 0.8
+        angle = random.randrange(10,40)
+        double_angle = 2 * angle
+        branch = x - random.randrange(1,15)
+
+        turtle.forward(x)
+        turtle.right(angle)
+        tree(branch, turtle, pen_size)
+        turtle.left(double_angle)
+        tree(branch, turtle, pen_size)
+        turtle.right(angle)
+        turtle.backward(x)
+
+def main():
+    wn = turtle.Screen()
+    zolw = turtle.Turtle(visible=False)
+    wn.tracer(False)
+    zolw.left(90)
+    tree(50,zolw,5)
+    wn.tracer(True)
+    wn.exitonclick()
+
+main()
