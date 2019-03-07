@@ -1,0 +1,17 @@
+
+# sorted array
+def binary_search(n, array, start, end ):
+    middle = int (( end + start +1) / 2)
+    x = array[middle]
+    if x == n:
+        return middle
+    elif x > n:
+        return binary_search(n, array, start, middle-1)
+    else:
+        return binary_search(n, array, middle+1, end )
+
+
+tablica = [0, 5 , 11, 61, 420,550,1203,2110]
+start = 0
+end = len(tablica) - 1
+print(binary_search(61,tablica, 0, len(tablica) - 1))
