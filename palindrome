@@ -1,0 +1,16 @@
+# check if given word is palindrome
+def palindrome(string):
+    dl = len(string)
+    dl2 = dl // 2
+    i = 0
+    while i < dl2:
+        if string[i] != string[dl - 1 - i]:
+            return False
+        else:
+            i += 1
+    return True
+
+
+print("Enter the word:")
+word = input()
+print(palindrome(word))
