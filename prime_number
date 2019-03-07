@@ -1,0 +1,18 @@
+# return True if n is prime number
+def prime(n):
+    for i in range(2, n):
+        if n % i == 0 :
+            return False
+    return True
+
+# find all prime numbers in given range 
+def prime2(start, end):
+    for i in range(start, end+1):
+        if prime(i):
+            print(i)
+
+
+n = 83969
+print(prime(n))
+
+prime2(4,17)
