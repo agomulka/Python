@@ -1,0 +1,42 @@
+class Node:
+    def __init__(self, value = None):
+        self.value = value
+        self.left = None
+        self.right = None
+
+    def __str__(self):
+        return str(self.value)
+
+
+def PreOrder(root):
+    if root :
+        print(root.value)
+        PreOrder(root.left)
+        PreOrder(root.right)
+
+def InOrder(root):
+    if root :
+        InOrder(root.left)
+        print(root.value)
+        InOrder(root.right)
+
+def PostOrder(root):
+    if root:
+        PostOrder(root.left)
+        PostOrder(root.right)
+        print(root.value)
+
+root = Node(1)
+root.left = Node(2)
+root.right = Node(3)
+root.left.left = Node(4)
+root.left.right = Node(5)
+
+print("preorder:")
+PreOrder(root)
+
+print("inorder:")
+InOrder(root)
+
+print("postorder:")
+PostOrder(root)
