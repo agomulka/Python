@@ -1,0 +1,15 @@
+import random
+
+def GuessNumber():
+    n = random.randrange(0,20)
+    print(n)
+    while True:
+        print("zgadnij liczbe z przedzialu 0-20")
+        x = int(input())
+        if(x == n) :
+            print("brawo!")
+            break
+        elif(x>n):
+            print("podales za duza liczbe")
+        else:
+            print("podales za mala")
